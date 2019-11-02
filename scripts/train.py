@@ -221,7 +221,7 @@ def train():
         #use multigpu model checkpoint
         ckp_saver = ModelCheckpointMultiGPU(checkpoint_dir + "/model.{epoch:02d}-{loss:.2f}.hdf5", monitor='loss', verbose=0,
                                     save_best_only=False,
-                                    save_weights_only=True, mode='auto', period=1)
+                                    save_weights_only=False, mode='auto', period=1)
 
         cb.append(ckp_saver)
 
